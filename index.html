@@ -3,25 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Affiliate Store</title>
+  <title>My Link in Bio Store</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f6fa;
+      background: #f4f6f9;
       margin: 0;
-      padding: 20px;
+      padding: 0;
       text-align: center;
     }
-
-    h1 {
-      margin-bottom: 10px;
+    .container {
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+    }
+    .profile img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #2ecc71;
+    }
+    .profile h1 {
+      margin: 10px 0 5px;
+      font-size: 24px;
       color: #2c3e50;
     }
-
-    p {
+    .profile p {
       color: #7f8c8d;
+      margin-bottom: 20px;
     }
-
+    .search-box {
+      margin: 15px 0;
+    }
+    .search-box input {
+      width: 90%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
     .product-card {
       display: flex;
       align-items: center;
@@ -30,15 +50,13 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       padding: 12px;
       margin: 12px auto;
-      max-width: 500px;
+      max-width: 600px;
       transition: 0.3s;
     }
-
     .product-card:hover {
       transform: scale(1.02);
       box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     }
-
     .product-card img {
       width: 60px;
       height: 60px;
@@ -46,70 +64,101 @@
       margin-right: 15px;
       object-fit: cover;
     }
-
     .product-card a {
       text-decoration: none;
       font-size: 16px;
       font-weight: bold;
       color: #2c3e50;
     }
-
     .product-card small {
       display: block;
       font-size: 13px;
       color: #7f8c8d;
     }
+    .social-links {
+      margin-top: 25px;
+    }
+    .social-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 20px;
+      padding: 10px 15px;
+      border-radius: 8px;
+      background: #2ecc71;
+      color: #fff;
+      transition: 0.3s;
+    }
+    .social-links a:hover {
+      background: #27ae60;
+    }
   </style>
+  <script>
+    function searchLinks() {
+      let input = document.getElementById("search").value.toLowerCase();
+      let cards = document.getElementsByClassName("product-card");
+      for (let i = 0; i < cards.length; i++) {
+        let text = cards[i].innerText.toLowerCase();
+        cards[i].style.display = text.includes(input) ? "flex" : "none";
+      }
+    }
+  </script>
 </head>
 <body>
+  <div class="container">
 
-  <h1>📌 My Affiliate Store</h1>
-  <p>Best Deals – Click and Shop from Daraz</p>
-
-  <!-- Product 1 -->
-  <div class="product-card">
-    <img src="https://static-01.daraz.pk/p/3a7b16a.jpg" alt="P30 Ultra Projector">
-    <div>
-      <a href="https://s.daraz.pk/s.bx7Ng?cc" target="_blank">Episode 25 - P30 Ultra Projector</a>
-      <small>Daraz.pk</small>
+    <!-- Profile Section -->
+    <div class="profile">
+      <img src="https://i.ibb.co/4fC2fQp/profile.jpg" alt="Profile">
+      <h1>Apka Naam</h1>
+      <p>Meri short bio yahan ayegi. Affiliate marketer 💻✨</p>
     </div>
-  </div>
 
-  <!-- Product 2 -->
-  <div class="product-card">
-    <img src="https://static-01.daraz.pk/p/12345.jpg" alt="Multi Port Hanger">
-    <div>
-      <a href="https://s.daraz.pk/s.bE4hK?cc" target="_blank">Episode 23 - Multi Port Hanger</a>
-      <small>Daraz.pk</small>
+    <!-- Search Bar -->
+    <div class="search-box">
+      <input type="text" id="search" onkeyup="searchLinks()" placeholder="Search products...">
     </div>
-  </div>
 
-  <!-- Product 3 -->
-  <div class="product-card">
-    <img src="https://static-01.daraz.pk/p/67890.jpg" alt="RC Car">
-    <div>
-      <a href="https://s.daraz.pk/s.bG4Cv" target="_blank">Episode 21 - RC Car</a>
-      <small>Daraz.pk</small>
+    <!-- Product Cards -->
+    <div class="product-card">
+      <img src="https://static-01.daraz.pk/p/3a7b16a.jpg" alt="P30 Ultra Projector">
+      <div>
+        <a href="https://s.daraz.pk/s.bx7Ng?cc" target="_blank">Episode 25 - P30 Ultra Projector</a>
+        <small>Daraz.pk</small>
+      </div>
     </div>
-  </div>
 
-  <!-- Product 4 -->
-  <div class="product-card">
-    <img src="https://static-01.daraz.pk/p/abcd.jpg" alt="Toothpaste Squeezer">
-    <div>
-      <a href="https://s.daraz.pk/s.bldAG?cc" target="_blank">Episode 19 - Toothpaste Squeezer</a>
-      <small>Daraz.pk</small>
+    <div class="product-card">
+      <img src="https://static-01.daraz.pk/p/12345.jpg" alt="Multi Port Hanger">
+      <div>
+        <a href="https://s.daraz.pk/s.bE4hK?cc" target="_blank">Episode 23 - Multi Port Hanger</a>
+        <small>Daraz.pk</small>
+      </div>
     </div>
-  </div>
 
-  <!-- Product 5 -->
-  <div class="product-card">
-    <img src="https://static-01.daraz.pk/p/efgh.jpg" alt="Pocket Staff">
-    <div>
-      <a href="https://s.daraz.pk/s.bKnwJ?cc" target="_blank">Episode 17 - Pocket Staff (Danda)</a>
-      <small>Daraz.pk</small>
+    <div class="product-card">
+      <img src="https://static-01.daraz.pk/p/67890.jpg" alt="RC Car">
+      <div>
+        <a href="https://s.daraz.pk/s.bG4Cv" target="_blank">Episode 21 - RC Car</a>
+        <small>Daraz.pk</small>
+      </div>
     </div>
-  </div>
 
+    <div class="product-card">
+      <img src="https://static-01.daraz.pk/p/efgh.jpg" alt="Pocket Staff">
+      <div>
+        <a href="https://s.daraz.pk/s.bKnwJ?cc" target="_blank">Episode 17 - Pocket Staff (Danda)</a>
+        <small>Daraz.pk</small>
+      </div>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="social-links">
+      <a href="https://facebook.com/YourPage" target="_blank">Facebook</a>
+      <a href="https://instagram.com/YourPage" target="_blank">Instagram</a>
+      <a href="https://youtube.com/YourPage" target="_blank">YouTube</a>
+      <a href="https://wa.me/923001234567" target="_blank">WhatsApp</a>
+    </div>
+
+  </div>
 </body>
 </html>
